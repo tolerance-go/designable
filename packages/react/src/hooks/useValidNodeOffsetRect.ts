@@ -31,7 +31,7 @@ export const useValidNodeOffsetRect = (node: TreeNode) => {
     )
       return
     const nextRect = viewport.getValidNodeOffsetRect(node)
-    if (!isEqualRect(rectRef.current, nextRect) && nextRect) {
+    if (!isEqualRect(rectRef.current as DOMRect, nextRect as DOMRect) && nextRect) {
       rectRef.current = nextRect
       forceUpdate([])
     }
